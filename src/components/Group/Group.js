@@ -19,7 +19,7 @@ class Group extends React.Component<GroupType> {
           {group.peopleImages.map(src => <ProfilePic src={src} tiny />)}
         </div>
         <div className="Group-info">
-          <div className="Group-name">{group.name}</div>
+          <div className="Group-name">{group.tag}</div>
           <div className="Group-count">{group.peopleCount} people</div>
         </div>
       </div>

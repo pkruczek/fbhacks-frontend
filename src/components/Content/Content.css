@@ -3,3 +3,7 @@
   margin: 0 auto;
   padding: 10px 10px;
 }
+
+.Content--full-height {
+  height: calc(100vh - 50px);
+}

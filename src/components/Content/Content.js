@@ -1,9 +1,13 @@
 import React from "react";
+import classnames from "classnames";
 import "./Content.css";
 
 class Content extends React.Component {
   render() {
-    return <div className="Content">{this.props.children}</div>;
+    const className = classnames("Content", {
+      "Content--full-height": this.props.fullHeight
+    });
+    return <div className={className}>{this.props.children}</div>;
   }
 }
 
