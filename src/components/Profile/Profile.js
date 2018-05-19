@@ -1,15 +1,22 @@
 // @flow
 import React from "react";
-import type { User } from "../model/profile";
-import user from "../../mock/profile";
-import integrations from "../../mock/integrations";
 import ProfilePic from "../ProfilePic/ProfilePic";
 import "./Profile.css";
+import { me } from "../../api/user";
 
 class Profile extends React.Component {
-  user: User = user;
+  state = {};
+
+  async componentDidMount() {
+    const user = await me();
+    this.setState({ user });
+  }
 
   render() {
+    const { user } = this.state;
+    if (!user) {
+      return <div />;
+    }
     return (
       <div className="Profile">
         <ProfilePic src={user.photoUrl} big />

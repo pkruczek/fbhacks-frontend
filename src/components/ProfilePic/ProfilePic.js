@@ -9,7 +9,7 @@ class ProfilePic extends React.Component {
       "ProfilePic--big": big,
       "ProfilePic--tiny": tiny
     });
-    return <img className={className} src={src} />;
+    return <img alt="profile" className={className} src={src} />;
   }
 }
 

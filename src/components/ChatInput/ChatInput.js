@@ -8,6 +8,8 @@ class ChatInput extends React.Component {
 
   handleInput = e => this.setState({ message: e.target.value });
 
+  onSend = () => this.setState({ message: "" });
+
   render() {
     const { message } = this.state;
     return (
@@ -18,7 +20,14 @@ class ChatInput extends React.Component {
           onChange={this.handleInput}
           placeholder="Send message"
         />
-        <button onClick={() => this.props.onSend(message)}>SEND</button>
+        <button
+          onClick={() => {
+            this.onSend();
+            this.props.onSend(message);
+          }}
+        >
+          SEND
+        </button>
       </div>
     );
   }

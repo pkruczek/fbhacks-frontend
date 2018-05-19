@@ -8,11 +8,13 @@ class GroupCard extends React.Component {
     const group = this.props.group;
     return (
       <div className="GroupCard">
-        <div className="GroupCard__label">Common interest</div>
+        <div className="GroupCard__label">Common interests</div>
         <div className="GroupCard__interest">{group.tag}</div>
         <div className="GroupCard__members">
           <div className="GroupCard__members-pics">
-            {group.peopleImages.map(src => <ProfilePic src={src} tiny />)}
+            {group.peopleImages.map((src, i) => (
+              <ProfilePic src={src} tiny key={i} />
+            ))}
           </div>
           <div className="GroupCard__members-text">
             Already {group.peopleCount} members

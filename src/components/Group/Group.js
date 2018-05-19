@@ -16,7 +16,9 @@ class Group extends React.Component<GroupType> {
     return (
       <div className="Group">
         <div className="GroupImages">
-          {group.peopleImages.map(src => <ProfilePic src={src} tiny />)}
+          {group.peopleImages.map((src, i) => (
+            <ProfilePic src={src} tiny key={i} />
+          ))}
         </div>
         <div className="Group-info">
           <div className="Group-name">{group.tag}</div>

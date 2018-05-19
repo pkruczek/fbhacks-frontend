@@ -1,9 +1,9 @@
 import React from "react";
 import { Check, Plus } from "react-feather";
 import integrations from "../../mock/integrations";
-import user from "../../mock/profile";
 import classnames from "classnames";
 import "./Integrations.css";
+import { me } from "../../api/user";
 
 const Integration = ({ name, added }) => {
   const className = classnames("Integration", {
@@ -19,7 +19,18 @@ const Integration = ({ name, added }) => {
 };
 
 class Integrations extends React.Component {
+  state = {};
+
+  async componentDidMount() {
+    const user = await me();
+    this.setState({ user });
+  }
+
   render() {
+    const { user } = this.state;
+    if (!user) {
+      return <div />;
+    }
     const addedIntegrations = user.integrations;
     const availableIntegrations = integrations.filter(
       i => !addedIntegrations.includes(i)
