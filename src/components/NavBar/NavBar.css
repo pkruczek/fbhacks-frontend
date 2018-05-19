@@ -4,8 +4,8 @@
   width: 100%;
   position: fixed;
   height: 50px;
-  color: #fff;
-  background-color: #6a1b9a;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
   padding: 0 20px;
   display: flex;
   align-items: center;

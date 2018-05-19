@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import ProfileView from "./views/ProfileView";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import GroupsView from "./views/GroupsView";
+import Discover from "./views/Discover";
 
 class App extends Component {
   render() {
@@ -12,14 +13,18 @@ class App extends Component {
         <Router>
           <div>
             <NavBar>
-              App Name here
+              Group App
               <nav>
-                <Link to="/">Home</Link>
-                <Link to="/profile">Profile</Link>
+                <NavLink exact to="/">
+                  Groups
+                </NavLink>
+                <NavLink to="/discover">Discover</NavLink>
+                <NavLink to="/profile">Profile</NavLink>
               </nav>
             </NavBar>
             <Route exact path="/" component={GroupsView} />
             <Route path="/profile" component={ProfileView} />
+            <Route path="/discover" component={Discover} />
           </div>
         </Router>
       </div>

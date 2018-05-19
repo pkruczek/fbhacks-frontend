@@ -7,7 +7,7 @@ class ProfileView extends React.Component {
   render() {
     return (
       <div>
-        <div style={{ backgroundColor: "#6a1b9a" }}>
+        <div>
           <Content>
             <Profile />
           </Content>

@@ -21,8 +21,8 @@ const Integration = ({ name, added }) => {
 class Integrations extends React.Component {
   render() {
     const addedIntegrations = user.integrations;
-    const availableIntegrations = integrations.filter(i =>
-      addedIntegrations.includes(i)
+    const availableIntegrations = integrations.filter(
+      i => !addedIntegrations.includes(i)
     );
 
     return (

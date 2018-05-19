@@ -10,6 +10,13 @@
   background-color: #fafafa;
 }
 
-.Group-name {
+.Group-info {
+  display: flex;
+  flex-direction: column;
   margin-left: 25px;
+}
+
+.Group-count {
+  font-size: 12px;
+  color: #666;
 }
