@@ -5,6 +5,7 @@ import ProfileView from "./views/ProfileView";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import GroupsView from "./views/GroupsView";
 import Discover from "./views/Discover";
+import ChatView from "./views/ChatView";
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
             <Route exact path="/" component={GroupsView} />
             <Route path="/profile" component={ProfileView} />
             <Route path="/discover" component={Discover} />
+            <Route path="/group/:groupId" component={ChatView} />
           </div>
         </Router>
       </div>

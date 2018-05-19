@@ -1,5 +1,6 @@
 const groups = [
   {
+    id: 1,
     name: "some name",
     peopleCount: 23,
     tag: "Metallica",
@@ -10,6 +11,7 @@ const groups = [
     ]
   },
   {
+    id: 2,
     name: "some name",
     peopleCount: 17,
     tag: "Programming",
@@ -20,6 +22,7 @@ const groups = [
     ]
   },
   {
+    id: 3,
     name: "some name",
     peopleCount: 9,
     tag: "Beer",

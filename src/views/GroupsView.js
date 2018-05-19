@@ -17,7 +17,11 @@ class GroupsView extends React.Component {
             </Button>
           </Link>
         </section>
-        {groups.map((group, i) => <Group key={i} {...group} />)}
+        {groups.map((group, i) => (
+          <Link to={`/group/${group.id}`} key={group.id}>
+            <Group {...group} />
+          </Link>
+        ))}
       </Content>
     );
   }
