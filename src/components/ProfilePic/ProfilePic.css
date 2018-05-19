@@ -1,0 +1,8 @@
+.ProfilePic {
+  border-radius: 50%;
+}
+
+.ProfilePic--big {
+  width: 80px;
+  height: 80px;
+}
