@@ -1,0 +1,15 @@
+.Group {
+  border-bottom: 1px solid #eee;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Group:hover {
+  background-color: #fafafa;
+}
+
+.Group-name {
+  margin-left: 25px;
+}

@@ -4,10 +4,10 @@ import "./ProfilePic.css";
 
 class ProfilePic extends React.Component {
   render() {
-    const { src, big, small } = this.props;
+    const { src, big, tiny } = this.props;
     const className = classnames("ProfilePic", {
       "ProfilePic--big": big,
-      "ProfilePuc--small": small
+      "ProfilePic--tiny": tiny
     });
     return <img className={className} src={src} />;
   }
