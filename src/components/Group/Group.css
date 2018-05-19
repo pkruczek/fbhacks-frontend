@@ -6,6 +6,10 @@
   cursor: pointer;
 }
 
+a:last-child .Group {
+  border-bottom: none;
+}
+
 .Group:hover {
   background-color: #fafafa;
 }

@@ -15,7 +15,7 @@ class Group extends React.Component<GroupType> {
     const group = this.props;
     return (
       <div className="Group">
-        <div className="GroupImages">
+        <div className="GroupImages" style={{ display: "flex" }}>
           {group.peopleImages.map((src, i) => (
             <ProfilePic src={src} tiny key={i} />
           ))}

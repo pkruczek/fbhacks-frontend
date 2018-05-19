@@ -4,33 +4,38 @@ import ChatInput from "../components/ChatInput/ChatInput";
 import Message from "../components/Message/Message";
 import { me } from "../api/user";
 import { getAllMessages, sendMessage } from "../api/chat";
+import { getGroup } from "../api/discover";
+import "./ChatView.css";
 
 class ChatView extends React.Component {
   state = {};
 
-  async componentDidMount() {
-    const [user, messages] = await Promise.all([me(), getAllMessages()]);
-    this.setState({ user, messages });
-  }
+  componentDidMount = async () => {
+    const groupId = this.props.match.params.groupId;
+    const [user, messages, group] = await Promise.all([
+      me(),
+      getAllMessages(),
+      getGroup(groupId)
+    ]);
+    this.setState({ user, messages, group });
+  };
   handleSend = async message => {
-    const groupId = this.props.match.groupId;
+    const groupId = this.props.match.params.groupId;
     await sendMessage(message, this.state.user, groupId);
     const messages = await getAllMessages(groupId);
     this.setState({ messages });
   };
 
   render() {
-    const { messages, user } = this.state;
+    const { messages, user, group } = this.state;
     if (!user) {
       return <div />;
     }
-    const id = this.props.match.params.groupId;
 
     return (
       <div className="ChatView">
         <Content>
-          {this.props.match.groupId}
-          {id}
+          <h2 className="ChatView__title">{group.tag}</h2>
           <div
             className="Messages"
             style={{
