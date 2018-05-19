@@ -1,3 +1,20 @@
+.ChatView__header {
+  position: fixed;
+  width: 100%;
+  top: 50px;
+  left: 0;
+  background-color: #fff;
+  padding: 10px;
+}
 .ChatView__title {
-  margin-top: 0;
+  margin: 0;
+}
+
+.ChatView__subtitle {
+  color: #666;
+}
+
+.Messages {
+  margin-top: 80px;
+  margin-bottom: 50px;
 }

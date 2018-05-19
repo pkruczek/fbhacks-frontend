@@ -35,7 +35,12 @@ class ChatView extends React.Component {
     return (
       <div className="ChatView">
         <Content>
-          <h2 className="ChatView__title">{group.tag}</h2>
+          <div className="ChatView__header">
+            <h2 className="ChatView__title">{group.tag}</h2>
+            <div className="ChatView__subtitle">
+              {group.peopleCount} members
+            </div>
+          </div>
           <div
             className="Messages"
             style={{

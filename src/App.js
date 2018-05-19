@@ -14,7 +14,6 @@ class App extends Component {
         <Router>
           <div>
             <NavBar>
-              Group App
               <nav>
                 <NavLink exact to="/">
                   Groups

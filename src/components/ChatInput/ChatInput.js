@@ -8,27 +8,25 @@ class ChatInput extends React.Component {
 
   handleInput = e => this.setState({ message: e.target.value });
 
-  onSend = () => this.setState({ message: "" });
+  handleSend = e => {
+    e.preventDefault();
+    const { message } = this.state;
+    this.props.onSend(message);
+    this.setState({ message: "" });
+  };
 
   render() {
     const { message } = this.state;
     return (
-      <div className="ChatInput">
+      <form className="ChatInput" onSubmit={this.handleSend}>
         <input
           type="text"
           value={message}
           onChange={this.handleInput}
           placeholder="Send message"
         />
-        <button
-          onClick={() => {
-            this.onSend();
-            this.props.onSend(message);
-          }}
-        >
-          SEND
-        </button>
-      </div>
+        <button onClick={this.handleSend}>SEND</button>
+      </form>
     );
   }
 }

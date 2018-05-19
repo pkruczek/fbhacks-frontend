@@ -7,7 +7,7 @@ export function sendMessage(message, user, groupId) {
 
 const mockChat = [
   {
-    name: "Some name",
+    name: "Bob",
     pic: "https://www.fakepersongenerator.com/Face/male/male1084293951446.jpg",
     message: "Hello"
   }
