@@ -7,6 +7,10 @@
   margin-bottom: 15px;
 }
 
+.GroupCard__members-pics {
+  display: flex;
+}
+
 .GroupCard__label {
   text-transform: uppercase;
   font-size: 14px;

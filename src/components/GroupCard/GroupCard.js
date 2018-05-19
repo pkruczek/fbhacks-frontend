@@ -5,7 +5,7 @@ import ProfilePic from "../ProfilePic/ProfilePic";
 
 class GroupCard extends React.Component {
   render() {
-    const group = this.props.group;
+    const { group, create } = this.props;
     return (
       <div className="GroupCard">
         <div className="GroupCard__label">Common interests</div>
@@ -16,11 +16,21 @@ class GroupCard extends React.Component {
               <ProfilePic src={src} tiny key={i} />
             ))}
           </div>
-          <div className="GroupCard__members-text">
-            Already {group.peopleCount} members
-          </div>
+          {create ? (
+            <div className="GroupCard__members-text">
+              Found {group.peopleCount} users with similar interests
+            </div>
+          ) : (
+            <div className="GroupCard__members-text">
+              Already {group.peopleCount} members
+            </div>
+          )}
         </div>
-        <Button fullWidth>JOIN</Button>
+        {create ? (
+          <Button fullWidth>CREATE</Button>
+        ) : (
+          <Button fullWidth>JOIN</Button>
+        )}
       </div>
     );
   }
