@@ -1,0 +1,27 @@
+.Integration {
+  background-color: #fff;
+  border: 1px solid #eee;
+  padding: 8px 16px;
+  margin: 4px 0;
+  border-radius: 4px;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Integration:hover {
+  background-color: #fafafa;
+}
+
+.Integration--addded {
+  background-color: #fafafa;
+}
+
+.Integration--addded .Integration-icon {
+  color: #4caf50;
+}
+
+.Integration-icon {
+  margin-left: auto;
+}
