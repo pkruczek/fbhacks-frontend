@@ -34,24 +34,28 @@ class ChatView extends React.Component {
 
     return (
       <div className="ChatView">
-        <Content>
-          <div className="ChatView__header">
-            <h2 className="ChatView__title">{group.tag}</h2>
-            <div className="ChatView__subtitle">
-              {group.peopleCount} members
-            </div>
-          </div>
+        <Content fullHeight>
           <div
-            className="Messages"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start"
-            }}
+            style={{ display: "flex", flexDirection: "column", height: "100%" }}
           >
-            {messages.map((m, i) => (
-              <Message key={i} my={m.name === user.name} {...m} />
-            ))}
+            <div className="ChatView__header">
+              <h2 className="ChatView__title">{group.tag}</h2>
+              <div className="ChatView__subtitle">
+                {group.peopleCount} members
+              </div>
+            </div>
+            <div
+              className="Messages"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start"
+              }}
+            >
+              {messages.map((m, i) => (
+                <Message key={i} my={m.name === user.name} {...m} />
+              ))}
+            </div>
           </div>
         </Content>
         <ChatInput onSend={this.handleSend} />
