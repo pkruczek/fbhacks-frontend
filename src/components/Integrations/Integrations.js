@@ -4,6 +4,7 @@ import integrations from "../../mock/integrations";
 import classnames from "classnames";
 import "./Integrations.css";
 import { me } from "../../api/user";
+import Link from "react-router-dom/Link";
 
 const Integration = ({ name, added }) => {
   const className = classnames("Integration", {
@@ -31,20 +32,15 @@ class Integrations extends React.Component {
     if (!user) {
       return <div />;
     }
-    const addedIntegrations = user.integrations;
-    const availableIntegrations = integrations.filter(
-      i => !addedIntegrations.includes(i)
-    );
-
+    const addedIntegrations = ["facebook", "twitter", "reddit"];
+    const availableIntegrations = [];
+    // const availableIntegrations = ["facebook", "twitter", "reddit"];
     return (
       <div className="Integrations">
         <h2>Integrations</h2>
-        {availableIntegrations.map(integr => (
-          <Integration name={integr} key={integr} />
-        ))}
-        {addedIntegrations.map(integr => (
-          <Integration name={integr} added key={integr} />
-        ))}
+        <a href={"http://localhost:8080/facebook-auth"}>
+          <Integration name="Facebook" />
+        </a>
       </div>
     );
   }
