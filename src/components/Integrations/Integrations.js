@@ -35,8 +35,10 @@ class Integrations extends React.Component {
       <div className="Integrations">
         <h2>Integrations</h2>
         <a href={"http://localhost:8080/facebook-auth"}>
-          <Integration name="Facebook" />
+          <Integration name="Facebook" added />
         </a>
+        <Integration name="Twitter" added />
+        <Integration name="Spotify" added />
       </div>
     );
   }

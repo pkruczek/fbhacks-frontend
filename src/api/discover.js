@@ -10,16 +10,18 @@ function parseDto(dto) {
   return [...matched, ...potential];
 }
 
-function parseGroup(groupDto) {
+function parseGroup(groupDto, i) {
   return {
-    id: (Math.random() * 100) | 0,
+    id: i,
     peopleCount: groupDto.users === null ? 0 : groupDto.users.length,
     tag: groupDto.intersectionInterests.join(", "),
     peopleImages: [
       "https://www.fakepersongenerator.com/Face/male/male20171086013288269.jpg",
       "https://www.fakepersongenerator.com/Face/female/female1022939203919.jpg",
-      "https://www.fakepersongenerator.com/Face/male/male108414886914.jpg"
-    ]
+      "https://www.fakepersongenerator.com/Face/male/male108414886914.jpg",
+      "https://www.fakepersongenerator.com/Face/male/male20171086013288269.jpg",
+      "https://www.fakepersongenerator.com/Face/female/female1022939203919.jpg"
+    ].slice(0, groupDto.users === null ? 0 : groupDto.users.length)
   };
 }
 
@@ -28,8 +30,8 @@ let groups_data;
 export function getGroups() {
   return new Promise(res => {
     if (!groups_data) {
-      const userId = sessionStorage.getItem("token");
-      fetch(`http://localhost:8080/api/matcher/greg`, {
+      // const userId = sessionStorage.getItem("token");
+      fetch(`http://localhost:8080/api/matcher/john`, {
         credentials: "include"
       })
         .then(res => res.json())

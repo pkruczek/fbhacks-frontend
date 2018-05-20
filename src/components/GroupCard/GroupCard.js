@@ -18,11 +18,11 @@ class GroupCard extends React.Component {
           </div>
           {create ? (
             <div className="GroupCard__members-text">
-              Found {group.peopleCount} users with similar interests
+              Found {group.peopleCount} user(s) with similar interests
             </div>
           ) : (
             <div className="GroupCard__members-text">
-              {group.peopleCount} members
+              {group.peopleCount} member(s)
             </div>
           )}
         </div>

@@ -14,7 +14,7 @@ class ChatView extends React.Component {
     const groupId = this.props.match.params.groupId;
     const [user, messages, group] = await Promise.all([
       me(),
-      getAllMessages(),
+      getAllMessages(groupId),
       getGroup(groupId)
     ]);
     this.setState({ user, messages, group });
