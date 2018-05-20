@@ -31,7 +31,7 @@ class ChatView extends React.Component {
     if (!user) {
       return <div />;
     }
-
+    console.log(group);
     return (
       <div className="ChatView">
         <Content fullHeight>

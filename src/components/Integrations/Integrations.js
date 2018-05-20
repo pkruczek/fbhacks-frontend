@@ -1,10 +1,8 @@
 import React from "react";
 import { Check, Plus } from "react-feather";
-import integrations from "../../mock/integrations";
 import classnames from "classnames";
 import "./Integrations.css";
 import { me } from "../../api/user";
-import Link from "react-router-dom/Link";
 
 const Integration = ({ name, added }) => {
   const className = classnames("Integration", {
@@ -32,9 +30,7 @@ class Integrations extends React.Component {
     if (!user) {
       return <div />;
     }
-    const addedIntegrations = ["facebook", "twitter", "reddit"];
-    const availableIntegrations = [];
-    // const availableIntegrations = ["facebook", "twitter", "reddit"];
+
     return (
       <div className="Integrations">
         <h2>Integrations</h2>
